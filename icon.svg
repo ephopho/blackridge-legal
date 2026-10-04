@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Blackridge Academy app icon: the icon cut of the wolf logo
+       (BlackridgeAcademy/Logo/black-ridge-icon.svg, full logo: blackridge-logo.svg).
+       For the phone: no nameplate (iOS prints the name under the icon), wolf
+       ~22 % larger, background calmed to moon + one ridge, facets lifted and a
+       cool backlight so the head separates from the night on a dark home
+       screen; the ember eyes are untouched. Full-bleed square, RGB, no alpha:
+       iOS applies the rounded mask itself. Render: README "App icon". -->
+  <defs>
+    <radialGradient id="gBg" cx="50%" cy="34%" r="80%">
+      <stop offset="0%" stop-color="#2c3644"/>
+      <stop offset="45%" stop-color="#171d26"/>
+      <stop offset="100%" stop-color="#090c11"/>
+    </radialGradient>
+    <radialGradient id="gMoon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#cfe0f2" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#cfe0f2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gBack" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4d6a8c" stop-opacity=".55"/>
+      <stop offset="55%" stop-color="#2d425c" stop-opacity=".28"/>
+      <stop offset="100%" stop-color="#2d425c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gEmber" cx="50%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#ffe7b0"/>
+      <stop offset="45%" stop-color="#ffab3d"/>
+      <stop offset="100%" stop-color="#ef5f0c"/>
+    </radialGradient>
+    <radialGradient id="gVign" cx="50%" cy="46%" r="74%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="62%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity=".38"/>
+    </radialGradient>
+    <linearGradient id="gMist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0d12" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0a0d12" stop-opacity=".95"/>
+    </linearGradient>
+    <filter id="bS" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="bL" x="-130%" y="-130%" width="360%" height="360%"><feGaussianBlur stdDeviation="26"/></filter>
+    <filter id="bRim" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7"/></filter>
+    <!-- Lift the facet values a step (keeps the palette's relationships). -->
+    <filter id="lift" x="-10%" y="-10%" width="120%" height="120%">
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="1.32" intercept="0.025"/>
+        <feFuncG type="linear" slope="1.32" intercept="0.025"/>
+        <feFuncB type="linear" slope="1.32" intercept="0.03"/>
+      </feComponentTransfer>
+    </filter>
+    <polygon id="head" points="352,150 452,236 512,250 572,236 672,150 712,302 740,418 772,516 700,556 756,634 672,668 696,730 590,774 512,798 434,774 328,730 352,668 268,634 324,556 252,516 284,418 312,302"/>
+  </defs>
+
+  <!-- night -->
+  <rect width="1024" height="1024" fill="url(#gBg)"/>
+  <circle cx="860" cy="132" r="76" fill="url(#gMoon)" opacity=".45"/>
+  <circle cx="860" cy="132" r="38" fill="#d7e4f0" opacity=".2"/>
+
+  <!-- one ridge + mist (the far ridge, slashes, stars and contours go: noise at 60 pt) -->
+  <polygon fill="#212a36" points="0,652 140,546 262,624 400,518 520,626 642,534 782,632 902,560 1024,638 1024,1024 0,1024"/>
+  <polyline fill="none" stroke="#a9bccf" stroke-opacity=".45" stroke-width="5" points="0,652 140,546 262,624 400,518 520,626 642,534 782,632 902,560 1024,638"/>
+  <rect x="0" y="640" width="1024" height="384" fill="url(#gMist)"/>
+
+  <!-- the wolf, 1.22x, centred -->
+  <g transform="translate(512 518) scale(1.22) translate(-512 -474)">
+    <!-- cool backlight + rim so the silhouette reads against the night -->
+    <ellipse cx="512" cy="470" rx="340" ry="330" fill="url(#gBack)"/>
+    <use href="#head" xlink:href="#head" fill="none" stroke="#9db5d0" stroke-opacity=".55" stroke-width="10" stroke-linejoin="round" filter="url(#bRim)"/>
+
+    <g filter="url(#lift)">
+      <use href="#head" xlink:href="#head" fill="#2b323c"/>
+      <g id="halfL">
+        <polygon fill="#3a434f" points="352,150 368,196 424,306 312,302"/>
+        <polygon fill="#0f1318" points="368,196 446,240 424,306"/>
+        <polygon fill="#3a434f" points="312,302 452,236 486,352 340,392"/>
+        <polygon fill="#2b323c" points="312,302 340,392 284,418"/>
+        <polygon fill="#4a5462" points="284,418 340,392 420,408 394,452"/>
+        <polygon fill="#14181e" points="382,432 452,416 470,438 396,458"/>
+        <polygon fill="#1e242c" points="284,418 394,452 252,516"/>
+        <polygon fill="#333c47" points="252,516 394,452 420,560 324,556"/>
+        <polygon fill="#14181e" points="394,452 438,484 420,560"/>
+        <polygon fill="#7f8b99" points="394,452 458,478 484,688 430,650"/>
+        <polygon fill="#2b323c" points="324,556 420,560 352,668"/>
+        <polygon fill="#232a34" points="324,556 420,560 430,650 268,634"/>
+        <polygon fill="#181d24" points="268,634 430,650 352,668"/>
+        <polygon fill="#20262e" points="352,668 430,650 328,730"/>
+        <polygon fill="#2a313b" points="328,730 430,650 434,774"/>
+      </g>
+      <use href="#halfL" xlink:href="#halfL" transform="matrix(-1,0,0,1,1024,0)"/>
+      <polygon fill="#232a34" points="512,250 468,330 512,398 556,330"/>
+      <polygon fill="#454f5c" points="458,478 566,478 536,590 488,590"/>
+      <polygon fill="#c3ccd6" points="488,590 536,590 540,688 484,688"/>
+      <polygon fill="#556070" points="502,400 522,400 517,672 507,672"/>
+      <polygon fill="#0b0e12" points="474,668 550,668 532,734 492,734"/>
+      <polygon fill="#2a323c" opacity=".85" points="482,670 542,670 534,692 490,692"/>
+      <path d="M512,732 L512,754 M494,754 Q512,768 530,754" stroke="#161b22" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <polygon fill="#cfd6dd" points="492,752 532,752 566,772 512,796 458,772"/>
+    </g>
+
+    <!-- ember eyes (outside the lift: exactly as designed) -->
+    <g id="eyeL">
+      <polygon points="394,452 448,436 476,466 436,484" fill="#ff7a1a" opacity=".55" filter="url(#bL)"/>
+      <polygon points="394,452 448,436 476,466 436,484" fill="#ff8c2a" opacity=".9" filter="url(#bS)"/>
+      <polygon points="394,452 448,436 476,466 436,484" fill="url(#gEmber)"/>
+      <polygon points="408,455 444,444 462,463 436,474" fill="#ffe9c4" opacity=".95"/>
+    </g>
+    <use href="#eyeL" xlink:href="#eyeL" transform="matrix(-1,0,0,1,1024,0)"/>
+  </g>
+
+  <!-- vignette -->
+  <rect width="1024" height="1024" fill="url(#gVign)"/>
+</svg>
